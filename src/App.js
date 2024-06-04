@@ -11,10 +11,9 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/products" element={<Categories />} />
+        <Route path="/category/:categoryId?" element={<Categories />} />
         <Route path="/products/:productId" element={<Productdetail />} />
       </Routes>
-
       <Footer />
     </div>
   );
