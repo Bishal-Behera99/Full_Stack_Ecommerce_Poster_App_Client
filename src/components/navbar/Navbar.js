@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <div className="Navbar">
+    <nav className="Navbar">
       <div className="container nav-container">
         <div className="nav-left">
           <ul className="link-group">
@@ -39,7 +39,7 @@ function Navbar() {
         </div>
       </div>
       {/* >>>>> */}
-    </div>
+    </nav>
   );
 }
 

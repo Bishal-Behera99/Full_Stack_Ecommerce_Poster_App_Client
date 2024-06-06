@@ -8,7 +8,7 @@ import CreditCard from "../../assets/creditcardicons.png";
 import "./footer.scss";
 function Footer() {
   return (
-    <div className="Footer">
+    <footer className="Footer">
       <div className="container">
         <div className="content">
           <div className="footer-left">
@@ -51,7 +51,7 @@ function Footer() {
           CopyRight {new Date().getFullYear()} <strong>Posterz</strong>
         </p>
       </div>
-    </div>
+    </footer>
   );
 }
 

@@ -6,6 +6,8 @@
 
         .info{
 
+            text-align: center;
+            margin-top: 20px;
             .sub-heading{
 
                 margin-top: 10px;
@@ -15,8 +17,10 @@
 
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
+            justify-content: center;
+            align-items: center;
             row-gap: 40px;
+            column-gap: 20px;
             margin-top: 20px;
 
         }
