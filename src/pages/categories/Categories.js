@@ -1,7 +1,38 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import "./categories.scss";
 import Products from "../../components/product/Products";
 function Categories() {
+  const navigate = useNavigate();
+  const params = useParams();
+
+  const [categoryId, setcategoryId] = useState("");
+  const [categoryList, setCategoryList] = useState([
+    {
+      id: "comics",
+      value: "Comics",
+    },
+
+    {
+      id: "Shows",
+      value: "Tv Shows",
+    },
+
+    {
+      id: "sports",
+      value: "Sports",
+    },
+  ]);
+
+  useEffect(() => {
+    setcategoryId(params.categoryId);
+
+    //api call
+  }, [params]);
+
+  function updateCategory(e) {
+    navigate(`/category/${e.target.value}`);
+  }
   return (
     <div className="Categories">
       <div className="container">
@@ -30,18 +61,19 @@ function Categories() {
           <div className="filter-box">
             <div className="category-filter">
               <h3>Category</h3>
-              <div className="filter-radio">
-                <input name="category" type="radio" id="comics" />
-                <label htmlFor="comics">Comics</label>
-              </div>
-              <div className="filter-radio">
-                <input name="category" type="radio" id="Shows" />
-                <label htmlFor="Shows">Tv Shows</label>
-              </div>
-              <div className="filter-radio">
-                <input name="category" type="radio" id="sports" />
-                <label htmlFor="sports">Sports</label>
-              </div>
+              {categoryList.map((items) => (
+                <div key={items.id} className="filter-radio">
+                  <input
+                    name="category"
+                    value={items.id}
+                    type="radio"
+                    id={items.id}
+                    checked={items.id === categoryId}
+                    onChange={updateCategory}
+                  />
+                  <label htmlFor={items.id}>{items.value}</label>
+                </div>
+              ))}
             </div>
           </div>
           <div className="product-box">
