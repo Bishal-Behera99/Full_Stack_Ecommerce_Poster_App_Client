@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./navbar.scss";
 import { BsCart2 } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import Cart from "../../pages/cart/Cart";
+import Cart from "../cart/Cart";
 
 function Navbar() {
   const [opencart, setopencart] = useState(false);
@@ -44,7 +44,6 @@ function Navbar() {
         </div>
         {/* >>>>> */}
       </nav>
-
       {opencart && <Cart onclose={() => setopencart(false)} />}
     </>
   );

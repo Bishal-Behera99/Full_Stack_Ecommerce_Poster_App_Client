@@ -89,3 +89,17 @@
         }
     }
 }
+
+@media screen and (max-width:760px){
+
+    .product-layout{
+        flex-direction: column;
+
+        .product-info{
+
+            margin-top: 80px;
+        }
+    }
+
+
+}

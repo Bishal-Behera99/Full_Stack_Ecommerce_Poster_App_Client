@@ -1,9 +1,11 @@
 import React from "react";
 import "./product.scss";
 import naruto from "../../assets/naruto.jpeg";
+import { useNavigate } from "react-router-dom";
 function Products() {
+  const navigate = useNavigate();
   return (
-    <div className="Products">
+    <div className="Products" onClick={() => navigate("/products/bkb")}>
       <div className="product-container">
         <div className="product-img">
           <div className="img-container">

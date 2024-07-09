@@ -5,57 +5,56 @@ import Products from "../../components/product/Products";
 function Categories() {
   const navigate = useNavigate();
   const params = useParams();
-
   const [categoryId, setcategoryId] = useState("");
-  const [categoryList, setCategoryList] = useState([
+  const categoryList = [
     {
       id: "comics",
       value: "Comics",
     },
 
     {
-      id: "Shows",
-      value: "Tv Shows",
-    },
-
-    {
       id: "sports",
       value: "Sports",
     },
-  ]);
 
+    {
+      id: "tv-shows",
+      value: "Tv-Shows",
+    },
+  ];
   useEffect(() => {
     setcategoryId(params.categoryId);
-
-    //api call
+    // api Call
   }, [params]);
-
-  function updateCategory(e) {
+  function updatecategory(e) {
     navigate(`/category/${e.target.value}`);
   }
   return (
     <div className="Categories">
       <div className="container">
-        {/* header section */}
         <div className="header">
           <div className="info">
             <h2>Explore All Print and Artwork</h2>
-            <p>India's largest collection of wall posters</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti.
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Blanditiis, nobis. Lorem ipsum, dolor sit amet consectetur
+              adipisicing elit. Labore animi numquam dolor eveniet similique
+              iure, minima, soluta necessitatibus incidunt saepe excepturi esse
+              minus non illo!
+            </p>
           </div>
-
           <div className="sort-by">
             <div className="sort-by-container">
               <h3 className="sort-by-text">Sort By</h3>
-              <select name="sort-by" id="sort-by" className="select-sort-by">
-                <option value="relevance">Relavance</option>
-                <option value="newest-first">Newest First</option>
-                <option value="price-lth">Price - low To High</option>
+              <select className="sort-by-select" name="sort-by" id="sort-by">
+                <option value="relevance">Relevance</option>
+                <option value="Newest-first">Newest-first</option>
+                <option value="Price-lth">Price - Low To High</option>
               </select>
             </div>
           </div>
         </div>
-
-        {/* Category Content */}
 
         <div className="content">
           <div className="filter-box">
@@ -68,15 +67,17 @@ function Categories() {
                     value={items.id}
                     type="radio"
                     id={items.id}
+                    onChange={updatecategory}
                     checked={items.id === categoryId}
-                    onChange={updateCategory}
                   />
                   <label htmlFor={items.id}>{items.value}</label>
                 </div>
               ))}
             </div>
           </div>
-          <div className="product-box">
+          <div className="products-box">
+            <Products />
+            <Products />
             <Products />
             <Products />
             <Products />

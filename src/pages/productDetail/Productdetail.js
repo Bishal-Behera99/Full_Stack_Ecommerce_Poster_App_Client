@@ -9,13 +9,13 @@ function Productdetail() {
           <div className="product-img center">
             <img src={dummyImg} alt="naturo-img" />
           </div>
-          <div className="product-info ">
+          <div className="product-info  ">
             <h1 className="heading">This is the Title,wall poster</h1>
             <h3 className="price">₹ 549 </h3>
             <p className="description">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas,
               nostrum? Voluptatibus voluptas minus velit sunt ea. Iste odit iure
-              repellendus, aut natus officiis beatae facilis!
+              repellendus, aut natusofficiis beatae facilis!
             </p>
 
             <div className="cart-options">
